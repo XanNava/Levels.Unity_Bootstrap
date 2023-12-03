@@ -9,7 +9,3 @@ Then simply have the Bootstrap script in your project.
 This script looks at your build settings for the location
 of the "Bootstrap" scene, and makes sure it is the first
 scene loaded when entering playmode.
-
-Note: Logs for the bootstrap SubsystemReg are put into a
-string builder so you can log them with a custom logging
-framework after (Like Unity.Logging/Serilog).
