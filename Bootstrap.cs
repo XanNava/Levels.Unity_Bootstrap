@@ -11,7 +11,6 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Bootstrap : MonoBehaviour {
-	public UnityEvent OnSubsystemRegistration_Hook;
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
 	public static void OnSubsystemRegistration() {
         	Debug.Log("[START] - Bootstrap.OnSubsystemRegistration");
