@@ -42,11 +42,11 @@ public partial class BootstrapPlayValidator {
 		Debug.Log("[STATE] - " + state);
 
 		if (state == PlayModeStateChange.ExitingEditMode) {
-			CheckBootstrapScene();
+			ValidateBootstrapScene();
 		}
 	}
 
-	private static void CheckBootstrapScene() {
+	private static void ValidateBootstrapScene() {
 		Scene scene = SceneManager.GetSceneByName("Bootstrap");
 
 		Debug.Log("[VALID] : Bootstrap.Unity - " + !scene.IsValid());
