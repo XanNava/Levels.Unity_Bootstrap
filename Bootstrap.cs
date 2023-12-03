@@ -39,7 +39,7 @@ public partial class BootstrapPlayValidator {
 	}
 
 	private static void OnPlayModeStateChanged(PlayModeStateChange state) {
-		Debug.Log(PlayModeStateChange.ExitingEditMode);
+		Debug.Log("[STATE] - " + state);
 
 		if (state == PlayModeStateChange.ExitingEditMode) {
 			CheckBootstrapScene();
