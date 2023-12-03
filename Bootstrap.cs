@@ -51,9 +51,8 @@ public partial class BootstrapPlayValidator {
 
 		Debug.Log("[VALID] : Bootstrap.Unity - " + !scene.IsValid());
 		if (!scene.IsValid() || (scene.IsValid() && !scene.isLoaded)) {
-			Debug.Log(EditorBuildSettings.scenes.Where((s) => { return s.path.Contains("Bootstrap"); }));
-			var holder = EditorBuildSettings.scenes.Where((s) => { return s.path.Contains("Bootstrap"); });
-			foreach (var h in holder) {
+			var BootstrapScene = EditorBuildSettings.scenes.Where((s) => { return s.path.Contains("Bootstrap"); });
+			foreach (var h in BootstrapScene) {
 				Debug.Log("[LOAD] : " + h.path);
 				scene = EditorSceneManager.OpenScene(h.path, OpenSceneMode.Additive);
 			}
