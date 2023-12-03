@@ -14,12 +14,6 @@ public class Bootstrap : MonoBehaviour {
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
 	public static void OnSubsystemRegistration() {
         	Debug.Log("[START] - Bootstrap.OnSubsystemRegistration");
-
-		Registrations();
-	}
-
-	private static void Registrations() {
-
 	}
 }
 
