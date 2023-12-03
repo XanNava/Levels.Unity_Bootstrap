@@ -20,7 +20,7 @@ public class Bootstrap : MonoBehaviour {
 	public UnityEvent OnSubsystemRegistration_Hook;
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
 	public static void OnSubsystemRegistration() {
-		prelogs.AppendLine("[START] - Bootstrap.OnSubsystemRegistration");
+        	Debug.Log("[START] - Bootstrap.OnSubsystemRegistration");
 
 		Registrations();
 	}
@@ -39,9 +39,9 @@ public partial class BootstrapPlayValidator {
 	}
 
 	private static void OnPlayModeStateChanged(PlayModeStateChange state) {
-		Debug.Log("[STATE] - " + state);
-
 		if (state == PlayModeStateChange.ExitingEditMode) {
+  			Debug.Log("[RUN] - ValidateBootstrapScene()");
+
 			ValidateBootstrapScene();
 		}
 	}
@@ -49,7 +49,7 @@ public partial class BootstrapPlayValidator {
 	private static void ValidateBootstrapScene() {
 		Scene scene = SceneManager.GetSceneByName("Bootstrap");
 
-		Debug.Log("[VALID] : Bootstrap.Unity - " + !scene.IsValid());
+		Debug.Log($"[VALID] : Bootstrap.Unity - {!scene.IsValid()}");
 		if (!scene.IsValid() || (scene.IsValid() && !scene.isLoaded)) {
 			EditorBuildSettingsScene? bootstrapSettingsScene = EditorBuildSettings.scenes.FirstOrDefault((s) => { return s.path.Contains("Bootstrap"); });
 
