@@ -1,9 +1,6 @@
 using System.Linq;
 using System.Text;
 
-using Levels.Unity;
-using Levels.Universal.DI;
-
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
